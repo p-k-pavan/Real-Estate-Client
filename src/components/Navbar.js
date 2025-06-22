@@ -109,7 +109,7 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <button className="bg-[#FEFFD2] text-white px-3 py-1 rounded-full hover:bg-[#d65e1a] transition-colors flex items-center text-sm h-7">
+              <button className="bg-white text-black px-3 py-1 rounded-full hover:bg-[#b99a87] transition-colors flex items-center text-sm h-7">
                 <FaUser className="mr-1 text-xs" />
                 <span className="text-xs">Sign In</span>
               </button>
@@ -202,7 +202,7 @@ export default function Navbar() {
                       alt="profile"
                     />
                   ) : (
-                    <div className="w-4 h-4 rounded-full bg-[#FF7D29] text-gray-50 flex items-center justify-center text-xs font-bold uppercase border border-[#FEFFD2] mr-2">
+                    <div className="w-4 h-4 rounded-full bg-[#FF7D29] text-black flex items-center justify-center text-xs font-bold uppercase border border-[#FEFFD2] mr-2">
                       {currentUser?.name?.slice(0, 1)}
                     </div>
                   )}
@@ -210,7 +210,7 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <FaUser className="mr-2 text-[#FEFFD2] text-xs" />
+                  <FaUser className="mr-2 text-black text-xs" />
                   <span>Sign In</span>
                 </>
               )}
