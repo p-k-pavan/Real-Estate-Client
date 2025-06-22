@@ -160,7 +160,7 @@ export default function CreateListing() {
       setLoading(true);
       setError('');
 
-      const res = await axios.post('${process.env.react_app_api_base_url}/api/listing/create', {
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/listing/create`, {
         ...formData,
         userRef: currentUser._id,
       }, {

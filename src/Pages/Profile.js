@@ -86,7 +86,7 @@ export default function Profile() {
       formData.append('avatar', file);
 
       const { data } = await axios.post(
-        `{process.env.REACT_APP_API_BASE_URL}/api/upload/profile`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/upload/profile`,
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

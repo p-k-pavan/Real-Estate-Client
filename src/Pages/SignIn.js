@@ -42,6 +42,8 @@ export default function SignIn() {
     return true;
   };
 
+  console.log(process.env.REACT_APP_API_URL)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -54,7 +56,7 @@ export default function SignIn() {
     try {
       dispatch(signInStart());
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/signin`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/auth/signin`,
         formData,
         {
           withCredentials: true,
