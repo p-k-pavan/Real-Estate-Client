@@ -109,7 +109,7 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <button className="bg-white text-black px-3 py-1 rounded-full hover:bg-[#b99a87] transition-colors flex items-center text-sm h-7">
+              <button className="bg-white text-black px-3 py-1 rounded-full hover:bg-black hover:text-white transition-colors flex items-center text-sm h-7">
                 <FaUser className="mr-1 text-xs" />
                 <span className="text-xs">Sign In</span>
               </button>
