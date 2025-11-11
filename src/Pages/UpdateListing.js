@@ -111,9 +111,10 @@ export default function UpdateListing() {
                     withCredentials: true
                 }
             );
-
+            if(res.data.success){
             toast.success('Listing updated successfully');
             navigate(`/listing/${params.listingId}`);
+            }
         } catch (error) {
             const errorMsg = error.response?.data?.message || error.message;
             setError(errorMsg);
