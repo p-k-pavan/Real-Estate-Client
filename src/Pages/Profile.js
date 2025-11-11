@@ -32,7 +32,7 @@ export default function Profile() {
   });
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
-  const [showListingsError, setShowListingsError] = useState(false);
+  const [showListingsError] = useState(false);
    const navigate = useNavigate();
   useEffect(() => {
     if (currentUser) {
