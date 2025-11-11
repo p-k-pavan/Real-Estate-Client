@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch, FaHome, FaInfoCircle, FaUser, FaPlus, FaBuilding } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Navbar() {
@@ -8,6 +8,7 @@ export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +18,14 @@ export default function Navbar() {
     navigate(`/search?${searchQuery}`);
   };
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchTermFromUrl = urlParams.get('searchTerm');
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [window.location.search]);
+useEffect(() => {
+  const urlParams = new URLSearchParams(location.search);
+  const searchTermFromUrl = urlParams.get('searchTerm');
+  if (searchTermFromUrl) {
+    setSearchTerm(searchTermFromUrl);
+  }
+}, [location.search]);
+
 
   return (
     <header className="bg-[#FF7D29] shadow-sm sticky top-0 z-50 border-b border-[#FEFFD2]/20 h-14">
