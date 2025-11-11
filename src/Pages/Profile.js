@@ -37,7 +37,7 @@ export default function Profile() {
   useEffect(() => {
     if (currentUser) {
       setFormData({
-        name: currentUser.name || '',
+        username: currentUser.username || '',
         email: currentUser.email || '',
         avatar: currentUser.avatar || '',
         password: ''
