@@ -56,7 +56,6 @@ export default function Search() {
     const fetchListings = async () => {
       setLoading(true);
       setShowMore(false);
-      const searchQuery = urlParams.toString();
       const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/listing?${urlParams.toString()}`);
       const data = res.data.data;
       setShowMore(data.length >= 9);
@@ -70,7 +69,7 @@ export default function Search() {
   }, [location.search]);
 
   const handleChange = (e) => {
-    const { id, value, type, checked } = e.target;
+    const { id, value, checked } = e.target;
 
     if (['all', 'rent', 'sale'].includes(id)) {
       setSidebardata({ ...sidebardata, type: id });
